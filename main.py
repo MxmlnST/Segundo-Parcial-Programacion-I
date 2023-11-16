@@ -1,6 +1,5 @@
 import pygame
 import random
-import sqlite3
 from constantes import *
 from torres import *
 from horda import *
@@ -71,7 +70,7 @@ while flag_run:
                 if input_activo:
                     if event.key == pygame.K_BACKSPACE:
                         input_nombre = input_nombre[:-1]
-                    else:
+                    elif len(input_nombre) < 15:
                         input_nombre += event.unicode
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if input_rect.collidepoint(event.pos):
@@ -142,7 +141,7 @@ while flag_run:
         horda.update(screen_mapa,lista_caminos,casillas,frames)
         
         if stats.vidas <= 0:
-            stats.agregar_data(input_nombre)
+            stats.registrar_stats(input_nombre)
             flag_partida = False
 
         pygame.display.flip()

@@ -6,10 +6,10 @@ class Stats():
     def __init__(self):
         self.oleada = 0
         self.vidas = 20
-        self.dinero = 30000
+        self.dinero = 300
         self.score = 0
         self.interes = 0.03
-        self.bonus = 5
+        self.bonus = 0
     
     def __str__(self):
         return (f"VIDAS: {self.vidas}\n"

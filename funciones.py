@@ -1,5 +1,4 @@
 import pygame
-import sqlite3
 from constantes import *
 import re
 
@@ -39,7 +38,8 @@ def menu_dibujar(screen,boton_partida,boton_scores,input_nombre,input_rect):
     screen.blit(texto_arriba_nombre,(150,10))
     
     pygame.draw.rect(screen,(191,130,200),input_rect,2)
-    texto_nombre = font_courier.render(input_nombre,True,(71,33,67))
+    texto_nombre = font_courier.render(input_nombre,True,(230,206,234))
+    input_rect.centerx = screen.get_rect().center[0]
     screen.blit(texto_nombre,(input_rect.x + 5,input_rect.y + 5))
     input_rect.w = max(100,texto_nombre.get_width() + 10)
     
